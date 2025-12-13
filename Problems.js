@@ -19,13 +19,8 @@ console.log(toArray({})) // ➞[]
 
 
 function getTotalPrice(array) {
-    let TotalPrice = 0
-    array.forEach((item) => {
-        TotalPrice += item.quantity * item.price
-    })
-
-    return TotalPrice
-
+    return getTotalPrice = (items) =>
+        items.reduce((sum, item) => sum + item.quantity * item.price, 0);
 }
 
 console.log(getTotalPrice([
@@ -47,3 +42,26 @@ console.log(getTotalPrice([
     { product: "Bread", quantity: 2, price: 1.60 },
     { product: "Cheese", quantity: 1, price: 4.50 }
 ]))// ➞ 10.4
+
+
+// PROBLEM 3  Frequency Distribution
+// Create a function that returns the frequency distribution of an array.This function should return an object, where the keys are the unique elements and the values are the frequency in which those elements occur.
+
+
+function getFrequencies(arr) {
+    if (!arr.length) return {}
+    let newObj = {}
+    for (let i = 0; i < arr.length; i++) {
+        if (!Object.hasOwn(newObj, arr[i])) {
+            newObj[`${arr[i]}`] = 1
+        } else {
+            newObj[`${arr[i]}`] += 1
+        }
+    }
+    return newObj
+}
+
+console.log(getFrequencies(["A", "B", "A", "A", "A"]))// ➞ { A: 4, B: 1 }
+console.log(getFrequencies([1, 2, 3, 3, 2]))// ➞ { "1": 1, "2": 2, "3": 2 }
+console.log(getFrequencies([true, false, true, false, false]))// ➞ { true: 2, false: 3 }
+console.log(getFrequencies([]))// ➞ { }
