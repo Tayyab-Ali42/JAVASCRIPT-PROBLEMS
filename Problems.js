@@ -94,3 +94,27 @@ console.log(chosenWine([
 
 console.log(chosenWine([{ name: "Wine A", price: 8.99 }]))// ➞ "Wine A"
 console.log(chosenWine([]))// ➞ null
+
+
+// PROBLEM 5 Burglary Series (12): Get Vodka Bottle
+// The insurance guy laughs, he's just kidding. He just needs an updated list. You just need one of those Rammstein Vodka bottles.
+
+// Given an object with alcoholic drinks and a number, return a string with the name of the Rammstein bottle that matches the given number.
+
+function getRammsteinBottle(obj, number) {
+    for (const elm in obj) {
+        if (obj[elm] == number) {
+            return elm
+        }
+    }
+    return ""
+}
+
+
+
+console.log(getRammsteinBottle({ whiskey: 100, "Rammstein A": 100, "Rammstein B": 50 }, 100)) //➞ "Rammstein A"
+// number = 100
+
+console.log(getRammsteinBottle({ whiskey: 100, "Rammstein A": 100, "Rammstein B": 50 }, 50)) //➞ "Rammstein B"
+// number = 50
+
