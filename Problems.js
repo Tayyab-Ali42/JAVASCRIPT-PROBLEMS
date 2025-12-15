@@ -196,3 +196,31 @@ btn.addEventListener('click', () => {
         btn.textContent = 'Disabled';
     }
 });
+
+
+
+// DOM Problem #3 (Medium)
+// Task: Show/Hide Password
+
+// Requirements
+// Clicking the button toggles input type between password and text
+// Button text should change:
+// Show → Hide
+// Hide → Show
+// Use JavaScript only
+
+let password = document.getElementById('password')
+let toggle = document.getElementById('toggle')
+
+
+toggle.addEventListener('click', (e) => {
+    e.target.textContent == "Show" ? 'Hide' : 'Show'
+    if (password.getAttribute('type') === 'password') {
+        password.setAttribute("type", "search")
+        // toggle.textContent = 'Hide'
+    } else {
+        password.setAttribute("type", "password")
+        // toggle.textContent = 'Show'
+
+    }
+})
