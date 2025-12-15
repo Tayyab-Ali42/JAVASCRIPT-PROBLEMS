@@ -170,3 +170,29 @@ menu.addEventListener('click', (e) => {
     }
 });
 
+
+// DOM Problem #2(Medium)
+// Task: Disable Button After 3 Clicks
+
+// Requirements
+
+// Each click increases a counter
+// Show click count inside <p>
+// After 3 clicks:
+// Disable the button
+// Change button text to "Disabled"s
+
+const btn = document.getElementById('btn');
+const count = document.getElementById('count');
+
+let clicks = 0;
+
+btn.addEventListener('click', () => {
+    clicks++;
+    count.textContent = clicks;
+
+    if (clicks === 3) {
+        btn.disabled = true;
+        btn.textContent = 'Disabled';
+    }
+});
