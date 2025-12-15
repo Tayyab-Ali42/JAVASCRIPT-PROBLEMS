@@ -118,3 +118,55 @@ console.log(getRammsteinBottle({ whiskey: 100, "Rammstein A": 100, "Rammstein B"
 console.log(getRammsteinBottle({ whiskey: 100, "Rammstein A": 100, "Rammstein B": 50 }, 50)) //➞ "Rammstein B"
 // number = 50
 
+// PROBLEM 6 Return the Most Expensive Piece of Jewellery
+
+// You go to a jewelry shop and try to find the most expensive piece of jewelry.You write down the name of each piece of jewelry and its price.
+
+// Create a function that gets the name of the piece of jewelry with the highest price and returns "The most expensive one is the {name of jewelry piece}".
+
+function mostExpensive(earnings) {
+    let max = 0
+    for (const key in earnings) {
+        if (earnings[key] > max) {
+            max = earnings[key]
+        }
+    }
+
+}
+
+mostExpensive({
+    "Diamond Earrings": 980,
+    "Gold Watch": 250,
+    "Pearl Necklace": 4650
+}) //➞  "The most expensive one is the Pearl Necklace"
+
+mostExpensive({
+    "Silver Bracelet": 280,
+    "Gemstone Earrings": 180,
+    "Diamond Ring": 3500
+}) // ➞ "The most expensive one is the Diamond Ring"
+
+
+
+
+// DOM PROBLEMS
+// DOM Problem #1 (Medium)
+// Task: Toggle Highlight on Click
+
+// You are given multiple <li> items inside a <ul>.
+// When a user clicks on any <li>:
+// That <li> should get a CSS class called active
+// Any other <li> that already has active should remove it
+// Clicking the already active item should keep it active (no toggle off)
+
+const menu = document.getElementById('menu');
+menu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+        const activeItem = menu.querySelector('.active');
+        if (activeItem) {
+            activeItem.classList.remove('active');
+        }
+        e.target.classList.add('active');
+    }
+});
+
