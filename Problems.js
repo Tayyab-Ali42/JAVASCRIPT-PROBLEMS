@@ -249,3 +249,35 @@ message.addEventListener('input', (e) => {
 
     info.textContent = `${value.length} / 100`;
 });
+
+
+
+// DOM Problem #5 (Medium)
+// Task: Accordion (Single Open Section)
+
+// Requirements
+
+// Clicking a < h3 > toggles its < p >
+// Only one section open at a time
+// Use event delegation
+// Hide others when one 
+
+const accordion = document.querySelector('.accordion');
+const paras = document.querySelectorAll('.para');
+
+accordion.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'H3') return;
+
+    const currentPara = e.target.nextElementSibling;
+    const isOpen = currentPara.style.display === 'block';
+
+    // Close all
+    paras.forEach(p => {
+        p.style.display = 'none';
+    });
+
+    // Toggle
+    if (!isOpen) {
+        currentPara.style.display = 'block';
+    }
+});
