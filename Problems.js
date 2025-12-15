@@ -214,13 +214,38 @@ let toggle = document.getElementById('toggle')
 
 
 toggle.addEventListener('click', (e) => {
-    e.target.textContent == "Show" ? 'Hide' : 'Show'
+    // e.target.textContent == "Show" ? 'Hide' : 'Show'
     if (password.getAttribute('type') === 'password') {
         password.setAttribute("type", "search")
-        // toggle.textContent = 'Hide'
+        toggle.textContent = 'Hide'
     } else {
         password.setAttribute("type", "password")
-        // toggle.textContent = 'Show'
+        toggle.textContent = 'Show'
 
     }
 })
+
+// DOM Problem #4 (Medium)
+// Task: Live Character Counter
+
+// Requirements
+
+// Max length = 100 characters
+// Update character count while typing
+// If user exceeds 100:
+// Trim extra characters
+// Keep count at 100
+
+const message = document.getElementById('message');
+const info = document.getElementById('info');
+
+message.addEventListener('input', (e) => {
+    let value = e.target.value;
+
+    if (value.length > 100) {
+        value = value.substring(0, 100);
+        message.value = value;
+    }
+
+    info.textContent = `${value.length} / 100`;
+});
