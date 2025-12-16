@@ -176,3 +176,59 @@ document.addEventListener('click', (e) => {
     }
 
 })
+
+
+// DOM Problem #8 (Infinite Scroll – Medium/Tricky)
+
+// Requirements
+
+// Initially render 10 items in the <ul>
+// e.g., Item 1, Item 2 … Item 10
+// When the user scrolls near the bottom of the page:
+// Append 10 more items to the list
+// Use the scroll event
+// Prevent multiple triggers at the same time (i.e., throttle or check loading)
+// Keep track of current number of items so next items are numbered correctly
+
+const List = document.getElementById('list')
+
+
+let itemCount = 1
+
+function renderItems(count) {
+    for (let i = 1; i <= count; i++) {
+        let li = document.createElement('li')
+        li.textContent = `item${itemCount}`
+        List.appendChild(li)
+        itemCount++
+    }
+
+}
+
+function throttle(fn, delay) {
+    let lastCall = 0
+    return function (...args) {
+        const now = Date.now();
+        if (now - lastCall >= delay) {
+            lastCall = now;
+            fn.apply(this, args);
+        }
+    }
+}
+
+window.addEventListener(
+    'scroll',
+
+    throttle(() => {
+
+        // Check if user is near the bottom
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+            renderItems(10);
+        }
+    }, 200)
+
+);
+
+renderItems(10)
+
+console.log(document.body.offsetHeight)
