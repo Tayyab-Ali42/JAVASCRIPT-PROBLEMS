@@ -153,3 +153,26 @@ modal.addEventListener('click', (e) => {
     if (e.target !== modal) return
     modal.classList.add('hidden')
 })
+
+
+// DOM Problem #7 (Medium → Advanced)
+// Task: Dropdown Menu (Click Outside to Close)
+
+// Requirements
+// Clicking Menu toggles dropdown
+// Clicking outside the dropdown & button closes it
+// Clicking inside dropdown does NOT close it
+
+let dropDownToggle = document.getElementById('dropdown_toggle')
+let dropDown = document.getElementById('dropdown')
+
+dropDownToggle.addEventListener('click', (e) => {
+    e.stopPropagation()
+    dropDown.classList.toggle('hidden')
+})
+document.addEventListener('click', (e) => {
+    if (!dropDown.contains(e.target) && e.target !== dropDownToggle) {
+        dropDown.classList.add('hidden');
+    }
+
+})
