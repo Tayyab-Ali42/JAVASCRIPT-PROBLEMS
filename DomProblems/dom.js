@@ -130,3 +130,26 @@ accordion.addEventListener('click', (e) => {
         currentPara.style.display = 'block';
     }
 });
+
+
+
+
+// DOM Problem #6(Medium → Tricky)
+// Task: Click Outside to Close Modal
+
+// Requirements
+// Clicking Open Modal → opens modal
+// Clicking outside .content → closes modal
+// Clicking inside .content → does nothing
+
+let openModal = document.getElementById('open')
+let modal = document.getElementById('modal')
+
+
+openModal.addEventListener('click', () => {
+    modal.classList.toggle('hidden')
+})
+modal.addEventListener('click', (e) => {
+    if (e.target !== modal) return
+    modal.classList.add('hidden')
+})

@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM PROBLEMS</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #modal {
+            width: 100px;
+            height: 100px;
+            padding: 1rem;
+            background-color: lightcoral;
+            margin-top: 1rem;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,6 +63,18 @@
         <h3>Section 3</h3>
         <p class="para" style="display: none;">Content 3</p>
     </div>
+
+
+    <!-- problem 6 -->
+
+    <button id="open">Open Modal</button>
+
+    <div id="modal" class="hidden">
+        <div class="content">
+            <p>Modal Content</p>
+        </div>
+    </div>
+
 
 
     <script src="dom.js"></script>
