@@ -232,3 +232,8 @@ window.addEventListener(
 renderItems(10)
 
 console.log(document.body.offsetHeight)
+
+
+
+// PROBLEM 8
+
