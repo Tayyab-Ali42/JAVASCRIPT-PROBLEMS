@@ -125,13 +125,16 @@ console.log(getRammsteinBottle({ whiskey: 100, "Rammstein A": 100, "Rammstein B"
 // Create a function that gets the name of the piece of jewelry with the highest price and returns "The most expensive one is the {name of jewelry piece}".
 
 function mostExpensive(earnings) {
-    let max = 0
-    for (const key in earnings) {
-        if (earnings[key] > max) {
-            max = earnings[key]
+    let maxPrice = 0
+    let maxItem = ""
+    for (const item in earnings) {
+        if (earnings[item] > maxPrice) {
+            maxPrice = earnings[item]
+            maxItem = item
         }
     }
 
+    console.log(`The most expensive one is the ${maxItem}`)
 }
 
 mostExpensive({
