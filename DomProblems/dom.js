@@ -223,13 +223,13 @@ window.addEventListener(
 
         // Check if user is near the bottom
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-            renderItems(10);
+            // renderItems(10);
         }
     }, 200)
 
 );
 
-renderItems(10)
+// renderItems(10)
 
 console.log(document.body.offsetHeight)
 

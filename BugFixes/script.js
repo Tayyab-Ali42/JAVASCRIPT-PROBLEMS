@@ -45,3 +45,28 @@ console.log(flatten([["a", "b"], ["c", "d"]]))
 console.log(flatten([[true, false], [false, false]]))
 // Expected: [true, false, false, false]
 
+
+
+
+// const cart = {
+//     items: [
+//         { id: 1, name: "Book", quantity: 1 },
+//         { id: 2, name: "Pen", quantity: 2 }
+//     ]
+// };
+
+// function updateQuantity() {
+//     let newObj = [...cart.items]
+//     newObj[0].quantity = 5
+//     // return cart
+// }
+// console.log(updateQuantity())
+// console.log(cart)
+
+
+
+debugger
+
+for (var i = 0; i < 3; i++) {
+    console.log(i)
+}
