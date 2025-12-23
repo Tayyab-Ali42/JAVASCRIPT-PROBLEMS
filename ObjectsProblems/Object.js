@@ -219,3 +219,27 @@ function toBoolArray(str) {
 console.log(toBoolArray("deep"))
 console.log(toBoolArray("loves"))
 console.log(toBoolArray("tesh"))
+
+
+// * PROBLEM 9 Map the Letters in a String
+// Given a word, create an object that stores the indexes of each letter in an array.
+
+// Make sure the letters are the keys.
+// Make sure the letters are symbols.
+// Make sure the indexes are stored in an array and those arrays are values.
+
+
+let mapLetters = (word) => {
+    let result = {}
+    word.split('').forEach((char, index) => {
+        if (!result[char]) {
+            result[char] = []
+        }
+        result[char].push(index)
+    })
+    return result
+}
+
+console.log(mapLetters("dodo"))
+console.log(mapLetters("froggy"))
+console.log(mapLetters("grapes"))
