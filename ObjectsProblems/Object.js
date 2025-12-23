@@ -152,3 +152,70 @@ mostExpensive({
 
 
 
+// * PROBLEM 7 Burglary Series (15): Number of Occurrences
+// To further increase the statistical knowledge of your fight, count the number of times a certain adjective was used.
+
+// Given an object that contains several adjectives as values, return a new object where you count the ocurrences of each adjective. 
+
+
+let countNumberOfOccurrences = (obj) => {
+    let accurCheck = {}
+
+    for (const key in obj) {
+        let value = obj[key]
+        accurCheck[value] = (accurCheck[value] || 0) + 1
+    }
+
+    console.log(accurCheck)
+}
+
+
+countNumberOfOccurrences({
+    a: "moron",
+    b: "scumbag",
+    c: "moron",
+    d: "idiot",
+    e: "idiot"
+})// ➞ { moron: 2, scumbag: 1, idiot: 2 }
+
+
+countNumberOfOccurrences({
+    a: "moron",
+    b: "moron",
+    c: "moron"
+})// ➞ { moron: 3 }
+
+
+countNumberOfOccurrences({
+    a: "idiot",
+    b: "scumbag"
+})// ➞ { idiot: 1, scumbag: 1 }
+
+
+
+// *  PROBLEM 8 Word to Bitstring to Boolean Array
+// Create a function that converts a word to a bitstring and then to a boolean array based on the following criteria:
+
+// Locate the position of the letter in the English alphabet (from 1 to 26).
+// Odd positions will be represented as 1 and even positions will be represented as 0.
+// Convert the represented positions to boolean values, 1 for true and 0 for false.
+// Store the conversions into an array.
+
+
+function toBoolArray(str) {
+    let result = []
+    str = str.toLowerCase()
+    for (const char of str) {
+        if (char >= 'a' && char <= 'z') {
+            let position = char.charCodeAt(0) - 96
+            let bit = position % 2 === 1 ? 1 : 0;
+            result.push(bit === 1);
+        }
+    }
+    return result
+}
+
+
+console.log(toBoolArray("deep"))
+console.log(toBoolArray("loves"))
+console.log(toBoolArray("tesh"))
