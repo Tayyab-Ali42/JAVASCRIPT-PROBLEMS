@@ -9,3 +9,13 @@ let sevenBoom = (arr) => {
 console.log(sevenBoom([1, 2, 3, 4, 5, 6, 7]))
 console.log(sevenBoom([8, 6, 33, 100]))
 console.log(sevenBoom([2, 55, 60, 97, 86, 90]))
+
+
+// PROBLEM 2 How Much is True?
+// Create a function which returns the number of true values there are in an array.
+
+let countTrue = arr => arr.filter(word => word === true).length
+
+console.log(countTrue([true, false, false, true, false]))
+console.log(countTrue([false, false, false, false]))
+console.log(countTrue([]))
