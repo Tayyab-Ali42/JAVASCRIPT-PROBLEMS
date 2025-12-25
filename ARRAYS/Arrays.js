@@ -44,3 +44,25 @@ concat([1], [2], [3], [4], [5], [6], [7])
 console.log(concat([1, 2], [3, 4]))
 console.log(concat([4, 4, 4, 4, 4]))
 console.log(concat([1], [2], [3], [4], [5], [6], [7]))
+
+
+// PROBLEM 5 Convenience Store
+// Given a total due and an array representing the amount of change in your pocket, determine whether or not you are able to pay for the item. Change will always be represented in the following order: quarters, dimes, nickels, pennies.
+
+// To illustrate: changeEnough([25, 20, 5, 0], 4.25) should yield true, since having 25 quarters, 20 dimes, 5 nickels and 0 pennies gives you 6.25 + 2 + .25 + 0 = 8.50.
+const changeEnough = (coins, price) => {
+    const values = [25, 10, 5, 1] // cents
+
+    const total = coins.reduce(
+        (sum, count, i) => sum + count * values[i],
+        0
+    )
+
+    return total >= price * 100
+}
+console.log(changeEnough([2, 100, 0, 0], 14.11))
+console.log(changeEnough([0, 0, 20, 5], 0.75))
+console.log(changeEnough([30, 40, 20, 5], 12.55))
+console.log(changeEnough([10, 0, 0, 50], 3.85))
+console.log(changeEnough([1, 0, 5, 219], 19.99))
+console.log(changeEnough([25, 20, 5, 0], 4.25))
