@@ -1,5 +1,6 @@
 
 // DOM PROBLEMS
+
 // DOM Problem #1 (Medium)
 // Task: Toggle Highlight on Click
 
@@ -231,9 +232,40 @@ window.addEventListener(
 
 // renderItems(10)
 
-console.log(document.body.offsetHeight)
 
 
 
-// PROBLEM 8
+// PROBLEM 9 Tabs Component (Medium → Hard)
+
+const tabsElm = document.querySelector('.tabs')
+const tabs = document.querySelectorAll('.tab')
+const panelElm = document.querySelectorAll('.panel')
+
+
+
+let tabComponent = (e) => {
+    if (!e.target.classList.contains('tab')) return
+    if (e.target.classList.contains('active')) return
+
+    tabs.forEach((item) => item.classList.remove('active'))
+    panelElm.forEach(item => item.classList.remove('active'))
+
+    e.target.classList.add('active')
+    const value = e.target.dataset.tab;
+
+    panelElm.forEach((item) => {
+        if (value == item.dataset.panel) {
+            item.classList.add('active')
+        }
+    })
+}
+
+
+
+tabsElm.addEventListener('click', (e) => {
+    tabComponent(e)
+})
+
+
+
 

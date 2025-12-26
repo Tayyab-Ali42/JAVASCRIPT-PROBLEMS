@@ -19,6 +19,14 @@
             margin-top: 1rem;
             color: white;
         }
+
+        .panel {
+            display: none;
+        }
+
+        .panel.active {
+            display: flex;
+        }
     </style>
 </head>
 
@@ -102,24 +110,22 @@
         <button type="submit">Submit</button>
 
         <p id="error"></p>
-
-
-        <!-- TABS PROBLEM -->
-
-        <div class="tabs">
-            <button class="tab" data-tab="1">Tab 1</button>
-            <button class="tab" data-tab="2">Tab 2</button>
-            <button class="tab" data-tab="3">Tab 3</button>
-        </div>
-
-        <div class="content">
-            <p class="panel" data-panel="1">Content for Tab 1</p>
-            <p class="panel" data-panel="2">Content for Tab 2</p>
-            <p class="panel" data-panel="3">Content for Tab 3</p>
-        </div>
-
-
     </form>
+
+    <!-- TABS PROBLEM  -->
+    <!-- PROBLEM 9 -->
+
+    <div class="tabs">
+        <button class="tab active" data-tab="1">Tab 1</button>
+        <button class="tab" data-tab="2">Tab 2</button>
+        <button class="tab" data-tab="3">Tab 3</button>
+    </div>
+
+    <div class="content">
+        <p class="panel active" data-panel="1">Content for Tab 1</p>
+        <p class="panel" data-panel="2">Content for Tab 2</p>
+        <p class="panel" data-panel="3">Content for Tab 3</p>
+    </div>
 
 
 
