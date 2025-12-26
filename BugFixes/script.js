@@ -59,3 +59,62 @@ function flatten(arr) {
 
 
 
+// PROBLEM 3 Clone an Array
+
+let clone = (arr) => {
+    return [...arr, [...arr]]
+}
+
+
+console.log(clone([1, 1])) // ➞ [1, 1, [1, 1]]
+console.log(clone([1, 2, 3]))// ➞ [1, 2, 3, [1, 2, 3]]
+console.log(clone(["x", "y"]))// ➞ ["x", "y", ["x", "y"]]
+
+// PROBLEM 4 Fix the Code: Un-Mutating an Array
+// Your friend is trying to write a function to accomplish the following transformations:
+// Each time x is called, the following results are shown:
+
+// change(x, 0)  // [3, 3, 3, 3, 3, 3, 3]
+// change(x, 1)  // [3, 2, 2, 2, 2, 2, 3]
+// change(x, 2)  // [3, 2, 1, 1, 1, 2, 3]
+// change(x, 3)  // [3, 2, 1, 0, 1, 2, 3]
+
+// Note: The change() function should not mutate the original array.After each call to the function, the original x should still equal[3, 3, 3, 3, 3, 3, 3].
+// He comes up with the following code:
+
+// BUGS CODE
+
+// function change(x, times) {
+//   for(let i = 0; i < x.length; i++) {
+//     let j = 1; 
+//     while (j <= times) {
+//       if (i >= j && i < x.length-j) {
+//         x[i]--; 
+//       }
+//       j++; 
+//     }
+//   }
+//   return x; 
+// }
+// Oops! The code appears to mutate the original array. Fix this incorrect code so that the function no longer mutates the original array.
+
+// FIXED CODE BY CLONING IT
+function change(x, times) {
+    let cloneArr = [...x]
+    for (let i = 0; i < cloneArr.length; i++) {
+        let j = 1;
+        while (j <= times) {
+            if (i >= j && i < cloneArr.length - j) {
+                cloneArr[i]--;
+            }
+            j++;
+        }
+    }
+
+
+    return cloneArr;
+}
+
+console.log(change([3, 3, 3, 3, 3], 1))
+console.log(change([3, 3, 3, 3, 3], 2))
+console.log(change([3, 3, 3, 3, 3], 0))
