@@ -64,7 +64,7 @@ console.log(changeEnough([2, 100, 0, 0], 14.11))
 console.log(changeEnough([10, 0, 0, 50], 3.85))
 
 
-// PROBLEM 6 Array of Multiples
+// * PROBLEM 6 Array of Multiples
 // Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
 
 

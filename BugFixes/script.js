@@ -1,4 +1,18 @@
-// PROBLEM 1
+// PROBLEM 1 PROBLEM 3 Fix the Error: Value vs. Reference Types
+
+// Create a function that returns true if two arrays contain identical values, and false otherwise.
+// To solve this question, your friend writes the following code:
+
+// YOUR FRIEND CODE
+// function checkEquals(arr1, arr2) {
+// if (arr1 === arr2) {
+//     return true
+// } else {
+//     return false
+// }
+//     }
+
+// YOUR CODE
 function checkEquals(arr1, arr2) {
     for (let i = 0; i < arr1.length; i++) {
         if (arr1[i] !== arr2[i]) return false
@@ -6,11 +20,11 @@ function checkEquals(arr1, arr2) {
     return true
 }
 
-console.log(checkEquals([1, 2], [1, 3]))
-console.log(checkEquals([1, 2], [1, 2]))
-console.log(checkEquals([4, 5, 6], [4, 5, 6]))
-console.log(checkEquals([4, 7, 6], [4, 5, 6]))
-console.log(checkEquals([4, 7, 6], [4, 6, 7]))
+// console.log(checkEquals([1, 2], [1, 3]))
+// console.log(checkEquals([1, 2], [1, 2]))
+// console.log(checkEquals([4, 5, 6], [4, 5, 6]))
+// console.log(checkEquals([4, 7, 6], [4, 5, 6]))
+// console.log(checkEquals([4, 7, 6], [4, 6, 7]))
 
 // PROBLEM 2
 // Fix the Error: Flattening an Array
@@ -36,37 +50,12 @@ function flatten(arr) {
     return arr2;
 }
 
-console.log(flatten([[1, 2], [3, 4]]))
+// console.log(flatten([[1, 2], [3, 4]]))
 // Expected: [1, 2, 3, 4]
-
-console.log(flatten([["a", "b"], ["c", "d"]]))
+// console.log(flatten([["a", "b"], ["c", "d"]]))
 // Expected: ["a", "b", "c", "d"]
-
-console.log(flatten([[true, false], [false, false]]))
+// console.log(flatten([[true, false], [false, false]]))
 // Expected: [true, false, false, false]
 
 
 
-
-// const cart = {
-//     items: [
-//         { id: 1, name: "Book", quantity: 1 },
-//         { id: 2, name: "Pen", quantity: 2 }
-//     ]
-// };
-
-// function updateQuantity() {
-//     let newObj = [...cart.items]
-//     newObj[0].quantity = 5
-//     // return cart
-// }
-// console.log(updateQuantity())
-// console.log(cart)
-
-
-
-debugger
-
-for (var i = 0; i < 3; i++) {
-    console.log(i)
-}
