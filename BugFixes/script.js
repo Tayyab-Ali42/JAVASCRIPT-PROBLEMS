@@ -196,3 +196,33 @@ let reverseString = (str) => {
     return str.split('').reduce((acc, crntvalue) => crntvalue + acc)
 }
 console.log(reverseString('hello'))
+
+
+// PROBLEM 9 Find the Bug: Annual Price and Deposit Increasement
+// The annual price increasement needs to be done and we have written a script to migrate a product. An object needs to be returned with the old product and the new migrated product for pricing history records.
+
+// All prices need to raised by 15% and the deposit of bottles is increased from $0.15 to $0.20.
+// During the tests the old product seems to be the new product as well. Something is not working like expected.
+
+function migrateProduct(oldProduct) {
+
+    const newProduct = {
+        ...oldProduct,
+        price: oldProduct.price * 1.15,
+        containers: oldProduct.containers.map((container) => ({
+            ...container,
+            deposit: container.type === 'bottle' ? 0.20 : container.deposit
+        }))
+    }
+    return { oldProduct, newProduct }
+}
+
+console.log(migrateProduct({
+    product: "Milk",
+    price: 1.2,
+    containers: [
+        { type: "bottle", deposit: 0.15, liters: 1.5 },
+        { type: "can", deposit: 0.1, liters: 0.33 },
+        { type: "carton", deposit: null, liters: 1 }
+    ]
+}))
