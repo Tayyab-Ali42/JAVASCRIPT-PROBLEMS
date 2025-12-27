@@ -118,3 +118,24 @@ function change(x, times) {
 console.log(change([3, 3, 3, 3, 3], 1))
 console.log(change([3, 3, 3, 3, 3], 2))
 console.log(change([3, 3, 3, 3, 3], 0))
+
+// PROBLEM 5 
+
+function hasValidPrice(product) {
+    if (!product || !('price' in product)) {
+        return false
+    }
+    const price = product.price
+
+    if (typeof price === 'number' && price >= 0) {
+        return true
+    }
+    return false
+
+}
+
+console.log(hasValidPrice({ "product": "Milk", price: 1.50 }))// ➞ true
+console.log(hasValidPrice({ "product": "Cheese", price: -1 }))// ➞ false
+console.log(hasValidPrice({ "product": "Eggs", price: 0 }))// ➞ true
+console.log(hasValidPrice({ "product": "Cereals", price: "3.0" }))// ➞ false
+console.log(hasValidPrice())// ➞ false
