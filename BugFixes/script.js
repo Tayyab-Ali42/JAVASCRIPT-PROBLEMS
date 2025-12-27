@@ -174,3 +174,25 @@ function shirtSize({ size = 'Big' } = {}) {
 
 console.log(shirtSize())
 
+
+
+// PROBLEM 8 Fix The Error: Array Reduce
+// The instructor assigns Boron two tasks (regarding the use of reduce() method after lecturing in array methods).
+
+// The first task is to create a function calculateSum() that takes a string and returns the sum of the ASCII values of all the characters in the string using reduce().
+// The second task is to create a function reverseString() that reverses and returns an input string using reduce().
+// While solving the problem, Boron has encountered errors. Help him fix the errors.
+
+let calculateSum = (str) => {
+    return str.split('').reduce((acc, _, index) => acc + str.charCodeAt(index), 0)
+}
+
+console.log(calculateSum('lime'))
+console.log(calculateSum('a'))
+
+
+
+let reverseString = (str) => {
+    return str.split('').reduce((acc, crntvalue) => crntvalue + acc)
+}
+console.log(reverseString('hello'))
