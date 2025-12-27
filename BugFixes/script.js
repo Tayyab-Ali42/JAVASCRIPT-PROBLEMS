@@ -139,3 +139,38 @@ console.log(hasValidPrice({ "product": "Cheese", price: -1 }))// ➞ false
 console.log(hasValidPrice({ "product": "Eggs", price: 0 }))// ➞ true
 console.log(hasValidPrice({ "product": "Cereals", price: "3.0" }))// ➞ false
 console.log(hasValidPrice())// ➞ false
+
+
+// PROBLEM 6 Sum of Digits of a Positive Integer
+// An instructor has given her student an assignment to calculate the sum of the digits of a positive integer using recursion.The student came up with the solution but the solution does not seem to be correct. Help her fix the error.
+
+// BUG CODE 
+
+// function sumDigit(positiveInteger) {
+// postiveInteger.reduce((acc, v) => acc - v, 0);
+// }
+
+// FIXED CODE
+function sumDigit(postiveInteger) {
+    return Array.from(String(postiveInteger), Number).reduce((acc, item) => acc + item, 0)
+}
+console.log(sumDigit(111))// ➞ 3
+console.log(sumDigit(222))// ➞ 6
+console.log(sumDigit(333))// ➞ 9
+
+// PROBLEM 7 ES6: Destructuring Objects VI
+// BUG CODE
+// function shirtSize({size = "big"}) {
+//     return size
+//   }
+
+shirtSize()  // error: Cannot destructure property "size" of "undefined" or "null"
+//   The preceding code produces an error because no object was passed to the function. Fix the function to return the default size, even if nothing is passed to the function. Don't remove the {size = "big"} object in the parameter and don't change the return statement.
+
+// FIXED CODE
+function shirtSize({ size = 'Big' } = {}) {
+    return size
+}
+
+console.log(shirtSize())
+
