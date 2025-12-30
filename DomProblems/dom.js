@@ -268,4 +268,24 @@ tabsElm.addEventListener('click', (e) => {
 
 
 
+// PROBLEM 10
+    const modelOpenBtn = document.querySelector('.modelOpen')
+    const accessibleModelElm = document.querySelector('.accessibleModel')
+    const tableElm = document.querySelector('.table')
 
+    modelOpenBtn.addEventListener('click', () => {
+        accessibleModelElm.classList.add('active')
+        tableElm.firstElementChild.focus()
+
+    })
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('active')) {
+            accessibleModelElm.classList.remove('active')
+        }
+    })
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === 'Escape' && accessibleModelElm.classList.contains('active')) {
+            accessibleModelElm.classList.remove('active')
+        }
+    });
